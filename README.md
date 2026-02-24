@@ -1,1 +1,1 @@
-### Rust pathway
+### Rust playground
