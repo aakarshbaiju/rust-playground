@@ -54,11 +54,27 @@ fn main() {
 }
 
 fn compound_datatypes() {
-    // TUPLE
+    // TUPLE (fixed length items with different types for each item)
     let tup = (500, "hi", true);
     println!("{} {} {}", tup.0, tup.1, tup.2);
 
     let (mut x, y, z) = tup;
     println!("{} {} {}", x, y, z);
     x = 2;
+
+    // ARRAYS (items with fixed datatypes)
+    let array = [1,2,3];
+    println!("{}, {}, {}", array[0], array[1], array[2]);
+
+    // let array2: [i32; 3] = [4,5,6];
+    // This won't work as array is defined as mutable
+    // array2[0] = 10;
+
+    let mut array2: [i32; 3] = [4,5,6];
+    println!("{}, {}, {}", array2[0], array2[1], array2[2]);
+    array2[0] = 10;
+    println!("{}, {}, {}", array2[0], array2[1], array2[2]);
+
+    // Results in index out of bounds error
+    // println!("{}", array2[3])
 }
