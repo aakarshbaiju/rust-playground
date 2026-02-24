@@ -77,4 +77,32 @@ fn compound_datatypes() {
 
     // Results in index out of bounds error
     // println!("{}", array2[3])
+
+    // VECTORS -> resizeable arrays
+    let mut nums = vec![1,2,3];
+    nums.push(4); // will only work if nums is mutable
+
+    // Printing like this shows default formatter error, instead use debug formatter notation
+    // println!("{}", nums);
+
+    println!("{:?}", nums);
+    let lastVal = nums.pop();
+    println!("{:?}", lastVal); // This will be an Option type and print as Some(4) because pop might not necessarily have a result if empty
+    println!("{:?}", nums);
+
+
+    let mut vec = Vec::new(); // constructor implementation opposed to doing vec! macro
+    vec.push("Test");
+    vec.push("String");
+    println!("{:?}", vec);
+    vec.reverse();
+    println!("{:?}", vec);
+
+    let mut vec2 = Vec::<i32>::with_capacity(2);
+    println!("{:?}", vec2);
+    println!("{}", vec2.capacity());
+
+    // Creating a vector using interator
+    let v: Vec<i32> = (0..5).collect();
+    println!("{:?}", v);
 }
