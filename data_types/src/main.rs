@@ -48,5 +48,17 @@ fn main() {
     let b = 4;
     let remainder = a % b;
 
-    println!("{}", remainder)
+    println!("{}", remainder);
+
+    compound_datatypes();
+}
+
+fn compound_datatypes() {
+    // TUPLE
+    let tup = (500, "hi", true);
+    println!("{} {} {}", tup.0, tup.1, tup.2);
+
+    let (mut x, y, z) = tup;
+    println!("{} {} {}", x, y, z);
+    x = 2;
 }
