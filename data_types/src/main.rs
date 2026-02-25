@@ -110,5 +110,26 @@ fn compound_datatypes() {
     let sv: &[i32] = &v[2..4]; // sv is a pointer to the vector (fat pointer)
     println!("{:?}", sv);
 
+    // Strings
+    // Stored as vector of bytes.
+    // Will always be a UTF 8 sequence
+    // Will be allocated on the heap, global and not null terminated
+    let name = String::from("Tyler");
+    let subject = "Rust".to_string();
+    let new_name = name.replace("Tyler", "Ty");
 
+    println!("{}", name);
+    println!("{}", subject);
+    println!("{}", new_name);
+
+    // &str is a string slice. More appropriate for a function argument
+    let str1 = "hello"; // &str
+    let str2 = str1.to_string();
+    let str3 = &str2;
+
+    println!("{}", str1);
+    println!("{}", str2);
+    println!("{}", str3);
+
+    println!("{}", "ONE".to_lowercase() == "one");
 }
