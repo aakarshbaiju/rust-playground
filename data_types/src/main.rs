@@ -102,7 +102,13 @@ fn compound_datatypes() {
     println!("{:?}", vec2);
     println!("{}", vec2.capacity());
 
-    // Creating a vector using interator
+    // Creating a vector using iterator
     let v: Vec<i32> = (0..5).collect();
     println!("{:?}", v);
+
+    // SLICES: region of an array or vector that can be of any length and cannot be directly stored in a variable
+    let sv: &[i32] = &v[2..4]; // sv is a pointer to the vector (fat pointer)
+    println!("{:?}", sv);
+
+
 }
