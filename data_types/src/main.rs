@@ -132,4 +132,10 @@ fn compound_datatypes() {
     println!("{}", str3);
 
     println!("{}", "ONE".to_lowercase() == "one");
+
+
+    // STRING LITERALS: can be not a valid utf-8 sequence
+    let rust = "\x52\x75\x73\x74";
+    println!("{}", rust);
+
 }
